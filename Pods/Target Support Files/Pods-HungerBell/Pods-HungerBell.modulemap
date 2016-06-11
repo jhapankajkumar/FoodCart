@@ -1,0 +1,6 @@
+framework module Pods_HungerBell {
+  umbrella header "Pods-HungerBell-umbrella.h"
+
+  export *
+  module * { export * }
+}
