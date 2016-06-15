@@ -20,10 +20,10 @@ class DataFetchManager: NSObject {
         let url = "http://webapi.eatkart.co.in:8080/FoodiGuy/default/sectors";
         Alamofire.request(.GET, url, parameters: nil)
             .responseJSON { response in
-                print(response.request)  // original URL request
+                /*print(response.request)  // original URL request
                 print(response.response) // URL response
                 print(response.data)     // server data
-                print(response.result)   // result of response serialization
+                print(response.result)   // result of response serialization */
                 
                 if let JSON = response.result.value {
                     let sectorDataArray = Mapper<SectorModel>().mapArray(JSON)
@@ -47,10 +47,10 @@ class DataFetchManager: NSObject {
         let encodedMessage = url.stringByReplacingOccurrencesOfString(" ", withString: "%20")
         Alamofire.request(.GET, encodedMessage, parameters: nil)
             .responseJSON { response in
-                print(response.request)  // original URL request
+                /*print(response.request)  // original URL request
                 print(response.response) // URL response
                 print(response.data)     // server data
-                print(response.result)   // result of response serialization
+                print(response.result)   // result of response serialization */
                 
                 if let JSON = response.result.value {
                     let societyDataArray = Mapper<SocietyModel>().mapArray(JSON)
@@ -73,10 +73,10 @@ class DataFetchManager: NSObject {
         let encodedMessage = url.stringByReplacingOccurrencesOfString(" ", withString: "%20")
         Alamofire.request(.GET, encodedMessage, parameters: nil)
             .responseJSON { response in
-                print(response.request)  // original URL request
+                /*print(response.request)  // original URL request
                 print(response.response) // URL response
                 print(response.data)     // server data
-                print(response.result)   // result of response serialization
+                print(response.result)   // result of response serialization */
                 
                 if let JSON = response.result.value {
                     let categoryArray = Mapper<FoodCategory>().mapArray(JSON)
@@ -95,24 +95,43 @@ class DataFetchManager: NSObject {
         let url = "http://webapi.eatkart.co.in:8080/FoodiGuy/rest/menus?isavailable=1&ordertype=\(orderType)&name=\(name)"
         
         let encodedMessage = url.stringByReplacingOccurrencesOfString(" ", withString: "%20")
-        Alamofire.request(.GET, encodedMessage, parameters: nil)
-            .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
-                if let JSON = response.result.value {
-                    let foodItemArray = Mapper<FoodItem>().mapArray(JSON)
-                    if foodItemArray?.count > 0 {
-                        completionHandler(result: true, foodItems: foodItemArray!)
-                    }
-                    else {
-                        completionHandler(result: false, foodItems: nil)
-                    }
-                    print("JSON: \(JSON)")
+        
+        let nsurlreq = NSMutableURLRequest(URL: NSURL(string: encodedMessage)!, cachePolicy: NSURLRequestCachePolicy.ReturnCacheDataElseLoad, timeoutInterval: 240)
+
+        //let nsurlreq = NSMutableURLRequest(URL: NSURL(string: encodedMessage)!)
+        
+        
+        Alamofire.request(nsurlreq).responseJSON { response in
+            if let JSON = response.result.value {
+                let foodItemArray = Mapper<FoodItem>().mapArray(JSON)
+                if foodItemArray?.count > 0 {
+                    completionHandler(result: true, foodItems: foodItemArray!)
                 }
+                else {
+                    completionHandler(result: false, foodItems: nil)
+                }
+                print("JSON: \(JSON)")
+            }
         }
+        
+//        Alamofire.request(.GET, encodedMessage, parameters: nil)
+//            .responseJSON { response in
+//                /*print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)   // result of response serialization */
+//                
+//                if let JSON = response.result.value {
+//                    let foodItemArray = Mapper<FoodItem>().mapArray(JSON)
+//                    if foodItemArray?.count > 0 {
+//                        completionHandler(result: true, foodItems: foodItemArray!)
+//                    }
+//                    else {
+//                        completionHandler(result: false, foodItems: nil)
+//                    }
+//                    print("JSON: \(JSON)")
+//                }
+//        }
     }
     
 //    - (void)fetchFoodItemDataForOrderType:(OrderType)orderType withName:(NSString *)name WithCompletionBlock:(void (^) (CacheData * cacheData, NSError *error)) completionBlock {

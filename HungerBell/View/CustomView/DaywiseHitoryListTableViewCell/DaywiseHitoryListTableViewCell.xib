@@ -77,9 +77,6 @@
                             <constraint firstAttribute="width" constant="32" id="RQ7-RT-wIo"/>
                         </constraints>
                         <state key="normal" image="remove_item"/>
-                        <connections>
-                            <action selector="decreaseItemQuantity:" destination="6FR-eK-wqv" eventType="touchUpInside" id="xq2-gw-O00"/>
-                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOO-NC-gNT">
                         <rect key="frame" x="269" y="88" width="32" height="32"/>
@@ -87,9 +84,6 @@
                             <constraint firstAttribute="width" constant="32" id="wY0-dC-7ha"/>
                         </constraints>
                         <state key="normal" image="add_item"/>
-                        <connections>
-                            <action selector="increaseItemQuantity:" destination="6FR-eK-wqv" eventType="touchUpInside" id="402-Q1-395"/>
-                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9W-QN-5Rw">
                         <rect key="frame" x="220" y="92" width="41" height="24"/>
@@ -177,19 +171,6 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="calory" destination="gLU-Dq-zLC" id="eOz-EO-a25"/>
-                <outlet property="dateTimeLabel" destination="hNw-Ww-dL4" id="VMJ-j2-myP"/>
-                <outlet property="dateTimeView" destination="9Km-ds-rhy" id="qlT-7n-3hz"/>
-                <outlet property="decreasQuantity" destination="Dza-RY-QYk" id="fZM-Ra-oOh"/>
-                <outlet property="foodType" destination="yBW-Sa-tk5" id="bO3-1X-oYM"/>
-                <outlet property="increaseQuantity" destination="EOO-NC-gNT" id="Rsc-ew-YRc"/>
-                <outlet property="itemImage" destination="izc-Sc-PpY" id="0yF-gy-W9m"/>
-                <outlet property="itemName" destination="hsn-u2-4Mv" id="ZBa-5V-zYi"/>
-                <outlet property="itemQuantity" destination="P9W-QN-5Rw" id="Xsk-p9-Llx"/>
-                <outlet property="orderStatus" destination="9xV-Ke-iOf" id="bDN-PV-YdE"/>
-                <outlet property="price" destination="6Ce-yw-4dD" id="U7J-rE-qnD"/>
-            </connections>
         </tableViewCell>
     </objects>
     <resources>

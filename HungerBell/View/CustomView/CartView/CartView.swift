@@ -20,6 +20,8 @@ class CartView: UIView {
         super.init(coder: aDecoder)
         //fatalError("init(coder:) has not been implemented")
     }
+    
+    
 
     /*
     // Only override drawRect: if you perform custom drawing.

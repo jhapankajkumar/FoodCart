@@ -1278,7 +1278,7 @@
         <!--Sub Item List View Controller-->
         <scene sceneID="9ma-z7-X3h">
             <objects>
-                <viewController id="dNL-p0-xtJ" customClass="SubItemListViewController" sceneMemberID="viewController">
+                <viewController id="dNL-p0-xtJ" customClass="SubItemListViewController" customModule="HungerBell" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EvP-aW-x5V"/>
                         <viewControllerLayoutGuide type="bottom" id="cvC-lp-R5t"/>
@@ -1291,8 +1291,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="dNL-p0-xtJ" id="yTL-3l-EBj"/>
-                                    <outlet property="delegate" destination="dNL-p0-xtJ" id="e6z-fr-azz"/>
+                                    <outlet property="dataSource" destination="dNL-p0-xtJ" id="POx-oy-VgY"/>
+                                    <outlet property="delegate" destination="dNL-p0-xtJ" id="DYS-z7-1D3"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLf-th-4Nv">
@@ -1325,9 +1325,9 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="loadingIndicator" destination="WOD-Bm-z1V" id="Wju-S3-KjV"/>
-                        <outlet property="noDataFound" destination="dLf-th-4Nv" id="PDW-0d-9Ow"/>
-                        <outlet property="subItemListTableView" destination="Bnf-DJ-GeQ" id="NWF-SQ-fyW"/>
+                        <outlet property="loadingIndicator" destination="WOD-Bm-z1V" id="GPg-qc-sUr"/>
+                        <outlet property="noDataFound" destination="dLf-th-4Nv" id="Wo6-GE-obR"/>
+                        <outlet property="subItemListTableView" destination="Bnf-DJ-GeQ" id="Yzs-kc-3FV"/>
                         <segue destination="JQI-Jt-t9z" kind="push" identifier="FoodItemSubListTOItemDetail" id="h6y-6b-0wa"/>
                         <segue destination="ks1-cf-7fD" kind="push" identifier="subItemListToPlaceOrder" id="tyu-ms-IFS"/>
                     </connections>
@@ -1565,10 +1565,10 @@
             </objects>
             <point key="canvasLocation" x="2005" y="1529"/>
         </scene>
-        <!--Add Item View Controller-->
+        <!--Selected Item List View Controller-->
         <scene sceneID="kE0-6c-8ms">
             <objects>
-                <viewController storyboardIdentifier="AddItemViewController" id="ks1-cf-7fD" customClass="AddItemViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddItemViewController" id="ks1-cf-7fD" customClass="SelectedItemListViewController" customModule="HungerBell" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W2O-2L-6SR"/>
                         <viewControllerLayoutGuide type="bottom" id="koH-q7-XVB"/>
@@ -1581,7 +1581,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddItemButtonCell" rowHeight="63" id="Okb-4A-yGH" customClass="AddItemButtonCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddItemButtonCell" rowHeight="63" id="Okb-4A-yGH" customClass="AddItemButtonCell" customModule="HungerBell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Okb-4A-yGH" id="W0c-BE-CGy">
@@ -1628,9 +1628,6 @@
                                                     <state key="normal" title="+">
                                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="addItemButtonTapped:" destination="Okb-4A-yGH" eventType="touchUpInside" id="6D2-Tf-hJ0"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1681,7 +1678,7 @@
         <!--Item Detail View Controller-->
         <scene sceneID="ALM-1g-KvV">
             <objects>
-                <viewController id="JQI-Jt-t9z" customClass="ItemDetailViewController" sceneMemberID="viewController">
+                <viewController id="JQI-Jt-t9z" customClass="ItemDetailViewController" customModule="HungerBell" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gP7-jz-d07"/>
                         <viewControllerLayoutGuide type="bottom" id="tQ7-dL-zgb"/>
@@ -2662,7 +2659,7 @@
         <image name="remove_item" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i2c-aX-9wW"/>
-        <segue reference="joW-km-h9q"/>
+        <segue reference="tyu-ms-IFS"/>
+        <segue reference="4Lr-4S-pvr"/>
     </inferredMetricsTieBreakers>
 </document>

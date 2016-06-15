@@ -11,5 +11,6 @@
 
 #import "HMSegmentedControl.h"
 #import "UIImageView+URLImageView.h"
+#import <Google/CloudMessaging.h>
 
 #endif /* HungerBell_Bridging_Header_h */

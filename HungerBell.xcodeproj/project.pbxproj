@@ -13,7 +13,7 @@
 		A4729C751D0B27BB0015AA41 /* PaymentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4729C651D0B27BB0015AA41 /* PaymentPageViewController.m */; };
 		A4729C761D0B27BB0015AA41 /* PaymentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4729C671D0B27BB0015AA41 /* PaymentStatusViewController.m */; };
 		A4729C771D0B27BB0015AA41 /* SuggesionAndComplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729C6F1D0B27BB0015AA41 /* SuggesionAndComplainViewController.swift */; };
-		A4729C7A1D0B27E80015AA41 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729C791D0B27E80015AA41 /* AddItemViewController.swift */; };
+		A4729C7A1D0B27E80015AA41 /* SelectedItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729C791D0B27E80015AA41 /* SelectedItemListViewController.swift */; };
 		A4729C7C1D0B27FC0015AA41 /* ChangeLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729C7B1D0B27FC0015AA41 /* ChangeLocationViewController.swift */; };
 		A4729C7E1D0B28110015AA41 /* DaywiseOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729C7D1D0B28110015AA41 /* DaywiseOrderViewController.swift */; };
 		A4729C801D0B281D0015AA41 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729C7F1D0B281D0015AA41 /* HomeScreenViewController.swift */; };
@@ -79,6 +79,7 @@
 		A4729D151D0B413A0015AA41 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A4729D101D0B413A0015AA41 /* Default.png */; };
 		A4729D161D0B413A0015AA41 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4729D111D0B413A0015AA41 /* Default@2x.png */; };
 		A4729D171D0B413A0015AA41 /* Default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4729D121D0B413A0015AA41 /* Default@3x.png */; };
+		A488D2E61D0D5D7500E98F92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A488D2E51D0D5D7500E98F92 /* GoogleService-Info.plist */; };
 		A49017321D088F3D0020C583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49017301D088F3D0020C583 /* Main.storyboard */; };
 		A49017341D088F3D0020C583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A49017331D088F3D0020C583 /* Assets.xcassets */; };
 		A49017371D088F3D0020C583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49017351D088F3D0020C583 /* LaunchScreen.storyboard */; };
@@ -103,7 +104,7 @@
 		A4729C661D0B27BB0015AA41 /* PaymentStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentStatusViewController.h; sourceTree = "<group>"; };
 		A4729C671D0B27BB0015AA41 /* PaymentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentStatusViewController.m; sourceTree = "<group>"; };
 		A4729C6F1D0B27BB0015AA41 /* SuggesionAndComplainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggesionAndComplainViewController.swift; sourceTree = "<group>"; };
-		A4729C791D0B27E80015AA41 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		A4729C791D0B27E80015AA41 /* SelectedItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedItemListViewController.swift; sourceTree = "<group>"; };
 		A4729C7B1D0B27FC0015AA41 /* ChangeLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLocationViewController.swift; sourceTree = "<group>"; };
 		A4729C7D1D0B28110015AA41 /* DaywiseOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaywiseOrderViewController.swift; sourceTree = "<group>"; };
 		A4729C7F1D0B281D0015AA41 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +170,7 @@
 		A4729D101D0B413A0015AA41 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Assets.xcassets/LaunchImage.launchimage/Default.png; sourceTree = "<group>"; };
 		A4729D111D0B413A0015AA41 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Assets.xcassets/LaunchImage.launchimage/Default@2x.png"; sourceTree = "<group>"; };
 		A4729D121D0B413A0015AA41 /* Default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@3x.png"; path = "Assets.xcassets/LaunchImage.launchimage/Default@3x.png"; sourceTree = "<group>"; };
+		A488D2E51D0D5D7500E98F92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A49017291D088F3C0020C583 /* HungerBell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HungerBell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49017311D088F3D0020C583 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A49017331D088F3D0020C583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -215,13 +217,13 @@
 				A4729C5A1D0B27BB0015AA41 /* HomeScreenViewController */,
 				A4729C611D0B27BB0015AA41 /* ItemDetailViewController */,
 				A4729C621D0B27BB0015AA41 /* ItemListViewController */,
+				A4729C6D1D0B27BB0015AA41 /* SubItemListViewController */,
 				A4729C631D0B27BB0015AA41 /* OnlinePaymentScreens */,
 				A4729C681D0B27BB0015AA41 /* OrderHistoryViewController */,
 				A4729C691D0B27BB0015AA41 /* PlaceOrderViewController */,
 				A4729C6A1D0B27BB0015AA41 /* ReferAndEarnViewController */,
 				A4729C6B1D0B27BB0015AA41 /* SettingsViewController */,
 				A4729C6C1D0B27BB0015AA41 /* SplashViewController */,
-				A4729C6D1D0B27BB0015AA41 /* SubItemListViewController */,
 				A4729C6E1D0B27BB0015AA41 /* SuggessionAndComplainViewController */,
 				A4729C701D0B27BB0015AA41 /* UpcomingMenuListViewController */,
 			);
@@ -400,7 +402,7 @@
 		A4729C781D0B27CC0015AA41 /* AddItemViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A4729C791D0B27E80015AA41 /* AddItemViewController.swift */,
+				A4729C791D0B27E80015AA41 /* SelectedItemListViewController.swift */,
 			);
 			path = AddItemViewController;
 			sourceTree = "<group>";
@@ -633,6 +635,7 @@
 				A4729D121D0B413A0015AA41 /* Default@3x.png */,
 				A49017331D088F3D0020C583 /* Assets.xcassets */,
 				A49017351D088F3D0020C583 /* LaunchScreen.storyboard */,
+				A488D2E51D0D5D7500E98F92 /* GoogleService-Info.plist */,
 				A49017381D088F3D0020C583 /* Info.plist */,
 				A4ADF39A1D0C3B2000A682CF /* HungerBell-Bridging-Header.h */,
 			);
@@ -784,6 +787,7 @@
 				A4729CDC1D0B30A80015AA41 /* FoodItemTableViewCell.xib in Resources */,
 				A4729CD61D0B30A80015AA41 /* CartView.xib in Resources */,
 				A4729CE11D0B30A80015AA41 /* EKNavigationBar.xib in Resources */,
+				A488D2E61D0D5D7500E98F92 /* GoogleService-Info.plist in Resources */,
 				A4729D171D0B413A0015AA41 /* Default@3x.png in Resources */,
 				A4729CD91D0B30A80015AA41 /* DaywiseHitoryListTableViewCell.xib in Resources */,
 				A4729D141D0B413A0015AA41 /* Default-667h@2x.png in Resources */,
@@ -878,7 +882,7 @@
 				A4729CAC1D0B29A90015AA41 /* BMIResult.swift in Sources */,
 				A4729CF61D0B31750015AA41 /* FoodItemCategoryTableViewCell.swift in Sources */,
 				A4729CA21D0B29550015AA41 /* UserDetail.swift in Sources */,
-				A4729C7A1D0B27E80015AA41 /* AddItemViewController.swift in Sources */,
+				A4729C7A1D0B27E80015AA41 /* SelectedItemListViewController.swift in Sources */,
 				A4729C9C1D0B29130015AA41 /* FoodCategory.swift in Sources */,
 				A4729CFC1D0B31CC0015AA41 /* HeaderView.swift in Sources */,
 				A4729D0D1D0B32D00015AA41 /* UpcomingMenuTableViewCell.swift in Sources */,

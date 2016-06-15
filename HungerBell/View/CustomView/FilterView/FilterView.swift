@@ -99,7 +99,7 @@ class FilterView: UIView {
             (self.controller as! ItemListViewController).reloadDataWithSortType(self.sortType)
         }
         else {
-            //(self.controller as! SubItemListViewController).reloadDataWithSortType(self.sortType)
+            (self.controller as! SubItemListViewController).reloadDataWithSortType(self.sortType)
         }
     }
     

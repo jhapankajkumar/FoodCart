@@ -17,5 +17,14 @@ class FooterView: UIView {
         // Drawing code
     }
     */
-
+     
+    
+    @IBOutlet weak var totalPrice:UILabel!
+    @IBOutlet weak var placeOrderButton:UIButton!
+    
+    func updatePrice(price:NSInteger, section:NSInteger, tableView:UITableView,controller:AnyObject) {
+        self.totalPrice.text = "\(Int(price))"
+    }
+    
+    
 }

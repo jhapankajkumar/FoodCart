@@ -14,7 +14,7 @@ class DropDownViewController: UIViewController,UITableViewDataSource,UITableView
     
     var dataArray:NSArray!
     var selectedIndexPath:NSIndexPath!
-    var delegate:DropDownViewControllerDelegate?
+    weak var delegate:DropDownViewControllerDelegate?
     
     
     override func viewDidLoad() {

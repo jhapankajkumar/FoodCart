@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemListViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
+class ItemListViewController: UIViewController, UITableViewDataSource,UITableViewDelegate,ItemDetailViewControllerDelegate,SelectedItemListViewControllerDelegate {
 
     var categorylist:NSArray!
     var allDataArray:NSMutableArray!
@@ -24,17 +24,10 @@ class ItemListViewController: UIViewController, UITableViewDataSource,UITableVie
     var selectedDate:NSDate!
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    
     @IBOutlet weak var noDataLabel: UILabel!
-    
     @IBOutlet weak var itemListTableView: UITableView!
-    
     @IBOutlet weak var segmentedSectionView: UIView!
 
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -77,7 +70,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource,UITableVie
         //set navigation bar view
         self.customNavBar = NSBundle.mainBundle().loadNibNamed("CustomNavigationBarView", owner: self, options: nil)[0] as! CustomNavigationBarView
         self.customNavBar.frame = CGRectMake(0, 0, self.view.frame.size.width, self.customNavBar.frame.size.height)
-        self.customNavBar.sortButton.addTarget(self, action: Selector("sortButtonTapped:"), forControlEvents: .TouchUpInside)
+        self.customNavBar.sortButton.addTarget(self, action: #selector(ItemListViewController.sortButtonTapped(_:)), forControlEvents: .TouchUpInside)
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd MMM yy"
         if (self.selectedDate != nil) {
@@ -183,10 +176,10 @@ class ItemListViewController: UIViewController, UITableViewDataSource,UITableVie
                     self.tableDataArray = self.allDataArray
                 }
                 else if self.sortType == .kSortTypeVeg {
-                    self.tableDataArray =  vegResult as! NSMutableArray
+                    self.tableDataArray =   NSMutableArray(array: vegResult)
                 }
                 else if self.sortType == .kSortTypeNonVeg {
-                    self.tableDataArray =  nonVegResult as! NSMutableArray
+                    self.tableDataArray =  NSMutableArray(array: nonVegResult)
                 }
                 
                 if self.tableDataArray.count > 0 {
@@ -237,10 +230,73 @@ class ItemListViewController: UIViewController, UITableViewDataSource,UITableVie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        let foodItem: FoodItem = (self.tableDataArray[indexPath.row] as! FoodItem)
+        self.selectedIndexPath = indexPath
+        if foodItem.islastItem.boolValue {
+            self.performSegueWithIdentifier("FoodItemListTOItemDetail", sender: self)
+        }
+        else {
+            self.performSegueWithIdentifier("ListToSublistView", sender: self)
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
     }
     
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "FoodItemListTOItemDetail") {
+            let detailViewController: ItemDetailViewController = (segue.destinationViewController as! ItemDetailViewController)
+            let foodItem: FoodItem = (self.tableDataArray[self.selectedIndexPath.row] as! FoodItem)
+            detailViewController.delegate = self
+            detailViewController.foodDetail = foodItem
+        }
+        else if (segue.identifier == "itemListToPlaceOrder") {
+            let addItemViewController: SelectedItemListViewController = (segue.destinationViewController as! SelectedItemListViewController)
+            addItemViewController.foodItemArray = Constant.SharedAppDelegate.globalKart
+            addItemViewController.delegate = self
+            addItemViewController.orderType = self.orderType
+            addItemViewController.selectedDate = self.selectedDate
+            Constant.SharedAppDelegate.cartView.hidden = true
+        }
+        else if (segue.identifier == "ListToSublistView") {
+            let subItemListViewController: SubItemListViewController = (segue.destinationViewController as! SubItemListViewController)
+            let foodItem: FoodItem = (self.tableDataArray[self.selectedIndexPath.row] as! FoodItem)
+            subItemListViewController.orderType = self.orderType
+            subItemListViewController.item = foodItem
+            subItemListViewController.selectedDate = self.selectedDate
+            subItemListViewController.sortType = self.sortType
+        }
+
+    }
+
+    func setUpdatedCountOfItem(foodItem: FoodItem) {
+        var tempArray = NSMutableArray()
+        tempArray = self.tableDataArray
+        let index: Int = tempArray.indexOfObject(foodItem)
+        if index != NSNotFound {
+            //[(NSMutableArray *)tempArray replaceObjectAtIndex:index withObject:foodItem];
+            //[self.tableDataArray removeAllObjects];
+            //self.tableDataArray =  tempArray;
+            self.itemListTableView.beginUpdates()
+            self.itemListTableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .None)
+            self.itemListTableView.endUpdates()
+            if Constant.SharedAppDelegate.globalKart.count > 0 {
+                Constant.SharedAppDelegate.cartView.hidden = false
+                let orderCount = self.getTotalOrderCount()
+                Constant.SharedAppDelegate.cartView.cartButton.setTitle("\(orderCount)", forState: .Normal)
+                Constant.SharedAppDelegate.cartView.cartButton.setTitle("\(orderCount)", forState: .Highlighted)
+            }
+        }
+    }
     
+    func getTotalOrderCount() -> NSInteger {
+        var sum = 0
+        for  index in 0...Constant.SharedAppDelegate.globalKart.count-1 {
+            let foodItem = Constant.SharedAppDelegate.globalKart .objectAtIndex(index) as! FoodItem
+            sum =  sum + foodItem.orderCount
+        }
+        return sum
+    }
     
     func reloadDataWithSortType(sortType: SortType) {
         self.sortType = sortType
@@ -255,13 +311,13 @@ class ItemListViewController: UIViewController, UITableViewDataSource,UITableVie
             self.itemListTableView.reloadData()
         }
         else if self.sortType == .kSortTypeVeg && vegResult.count > 0 {
-            self.tableDataArray = vegResult as! NSMutableArray
+            self.tableDataArray = NSMutableArray(array: vegResult)
             self.itemListTableView.hidden = false
             self.noDataLabel.hidden = true
             self.itemListTableView.reloadData()
         }
         else if self.sortType == .kSortTypeNonVeg && nonVegResult.count > 0 {
-            self.tableDataArray = nonVegResult as! NSMutableArray
+            self.tableDataArray = NSMutableArray(array: nonVegResult)
             self.itemListTableView.hidden = false
             self.noDataLabel.hidden = true
             self.itemListTableView.reloadData()
@@ -275,6 +331,18 @@ class ItemListViewController: UIViewController, UITableViewDataSource,UITableVie
         self.filterView.removeFromSuperview()
     }
 
+    
+    func updateTable() {
+        if Constant.SharedAppDelegate.globalKart.count > 0 {
+            Constant.SharedAppDelegate.cartView.hidden = false
+        }
+        self.itemListTableView.reloadData()
+    }
+    
+    func sortButtonTapped(button: UIButton) {
+        self.view!.addSubview(self.filterView)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -83,12 +83,12 @@ class FoodItemTableViewCell: UITableViewCell {
                 //[  Constant.SharedAppDelegate.globalKart removeObject:[results firstObject]];
                 //[  Constant.SharedAppDelegate.globalKart addObject:item];
                 if   Constant.SharedAppDelegate.globalKart.count > 0 {
-                    if !(self.viewController is AddItemViewController ) {
+                    if !(self.viewController is SelectedItemListViewController ) {
                           Constant.SharedAppDelegate.cartView.hidden = false
                     }
-                    else if (self.viewController is AddItemViewController) {
-                        //let controller: AddItemViewController = (self.viewController as! AddItemViewController)
-                        //controller.updateMenuItemCountForItem(self.foodItem, atIndexPath: self.indexPath)
+                    else if (self.viewController is SelectedItemListViewController) {
+                        let controller: SelectedItemListViewController = (self.viewController as! SelectedItemListViewController)
+                        controller.updateMenuItemCountForItem(self.foodItem, atIndexPath: self.indexPath)
                     }
                     
                       let orderCount = self.getTotalOrderCount()
@@ -101,12 +101,12 @@ class FoodItemTableViewCell: UITableViewCell {
                 self.foodItem.orderCount = self.foodItem.orderCount + 1;
                 self.itemQuantity.text = "\(self.foodItem.orderCount)"
                 if   Constant.SharedAppDelegate.globalKart.count > 0 {
-                    if !(self.viewController is AddItemViewController) {
+                    if !(self.viewController is SelectedItemListViewController) {
                           Constant.SharedAppDelegate.cartView.hidden = false
                     }
-                    else if (self.viewController is AddItemViewController) {
-                        //let controller: AddItemViewController = (self.viewController as! AddItemViewController)
-                        //controller.updateMenuItemCountForItem(self.foodItem, atIndexPath: self.indexPath)
+                    else if (self.viewController is SelectedItemListViewController) {
+                        let controller: SelectedItemListViewController = (self.viewController as! SelectedItemListViewController)
+                        controller.updateMenuItemCountForItem(self.foodItem, atIndexPath: self.indexPath)
                     }
 
                     let orderCount = self.getTotalOrderCount()
@@ -133,12 +133,12 @@ class FoodItemTableViewCell: UITableViewCell {
                       Constant.SharedAppDelegate.globalKart.removeObject(results.firstObject!)
                 }
                 //if (  Constant.SharedAppDelegate.globalKart.count >= 0) {
-                if !(self.viewController is AddItemViewController) {
+                if !(self.viewController is SelectedItemListViewController) {
                       Constant.SharedAppDelegate.cartView.hidden = false
                 }
-                else if (self.viewController is AddItemViewController) {
-                    //var controller: AddItemViewController = (self.viewController as! AddItemViewController)
-                    //controller.updateMenuItemCountForItem(self.foodItem, atIndexPath: self.indexPath)
+                else if (self.viewController is SelectedItemListViewController) {
+                    let controller: SelectedItemListViewController = (self.viewController as! SelectedItemListViewController)
+                    controller.updateMenuItemCountForItem(self.foodItem, atIndexPath: self.indexPath)
                 }
                 
                 let orderCount = self.getTotalOrderCount()
@@ -167,7 +167,7 @@ class FoodItemTableViewCell: UITableViewCell {
     
     func getTotalOrderCount() -> NSInteger {
         var sum = 0
-        for  index in 0...Constant.SharedAppDelegate.globalKart.count-1 {
+        for  index in 0..<Constant.SharedAppDelegate.globalKart.count {
             let foodItem = Constant.SharedAppDelegate.globalKart .objectAtIndex(index) as! FoodItem
             sum =  sum + foodItem.orderCount
         }
