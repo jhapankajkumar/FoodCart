@@ -93,6 +93,9 @@
 		A4ADF38B1D0C313200A682CF /* CacheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ADF38A1D0C313200A682CF /* CacheData.swift */; };
 		A4ADF38F1D0C375600A682CF /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ADF38E1D0C375600A682CF /* HMSegmentedControl.m */; };
 		A4ADF39F1D0C698D00A682CF /* UIImageView+URLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ADF39E1D0C698D00A682CF /* UIImageView+URLImageView.m */; };
+		A4B427141D1326700015D268 /* ClassProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B427131D1326700015D268 /* ClassProperty.swift */; };
+		A4B427191D13320F0015D268 /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B427181D13320F0015D268 /* BaseObject.swift */; };
+		A4B4271B1D1336680015D268 /* URLCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B4271A1D1336680015D268 /* URLCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,6 +192,9 @@
 		A4ADF39A1D0C3B2000A682CF /* HungerBell-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HungerBell-Bridging-Header.h"; sourceTree = "<group>"; };
 		A4ADF39D1D0C698D00A682CF /* UIImageView+URLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+URLImageView.h"; sourceTree = "<group>"; };
 		A4ADF39E1D0C698D00A682CF /* UIImageView+URLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URLImageView.m"; sourceTree = "<group>"; };
+		A4B427131D1326700015D268 /* ClassProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassProperty.swift; sourceTree = "<group>"; };
+		A4B427181D13320F0015D268 /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
+		A4B4271A1D1336680015D268 /* URLCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLCache.swift; sourceTree = "<group>"; };
 		ABACA77D9E903A320D5D6988 /* Pods-HungerBell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HungerBell.release.xcconfig"; path = "Pods/Target Support Files/Pods-HungerBell/Pods-HungerBell.release.xcconfig"; sourceTree = "<group>"; };
 		C71093EC5D4CE87108C92F97 /* Pods-HungerBell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HungerBell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HungerBell/Pods-HungerBell.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -647,6 +653,7 @@
 			children = (
 				A4ADF39C1D0C698D00A682CF /* ImageView+Addition */,
 				A4ADF38C1D0C375600A682CF /* HMSegmentedControl */,
+				A4B427131D1326700015D268 /* ClassProperty.swift */,
 			);
 			path = Plugins;
 			sourceTree = "<group>";
@@ -676,6 +683,8 @@
 				A4ADF3811D0C0D5000A682CF /* Constant.swift */,
 				A4ADF3861D0C127800A682CF /* UniqueDeviceIdentifier.swift */,
 				A4ADF38A1D0C313200A682CF /* CacheData.swift */,
+				A4B427181D13320F0015D268 /* BaseObject.swift */,
+				A4B4271A1D1336680015D268 /* URLCache.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -882,6 +891,7 @@
 				A4729CAC1D0B29A90015AA41 /* BMIResult.swift in Sources */,
 				A4729CF61D0B31750015AA41 /* FoodItemCategoryTableViewCell.swift in Sources */,
 				A4729CA21D0B29550015AA41 /* UserDetail.swift in Sources */,
+				A4B427141D1326700015D268 /* ClassProperty.swift in Sources */,
 				A4729C7A1D0B27E80015AA41 /* SelectedItemListViewController.swift in Sources */,
 				A4729C9C1D0B29130015AA41 /* FoodCategory.swift in Sources */,
 				A4729CFC1D0B31CC0015AA41 /* HeaderView.swift in Sources */,
@@ -895,12 +905,14 @@
 				A4729C941D0B28B60015AA41 /* UpcomingMenuViewController.swift in Sources */,
 				A4729CA01D0B29420015AA41 /* OrderDetail.swift in Sources */,
 				A4ADF3801D0C0D2D00A682CF /* AppDelegate.swift in Sources */,
+				A4B4271B1D1336680015D268 /* URLCache.swift in Sources */,
 				A4729CA61D0B29790015AA41 /* OrderItem.swift in Sources */,
 				A4ADF3821D0C0D5000A682CF /* Constant.swift in Sources */,
 				A4729D021D0B32290015AA41 /* EKNavigationBar.swift in Sources */,
 				A4729C8A1D0B286A0015AA41 /* PlaceOrderViewController.swift in Sources */,
 				A4729C771D0B27BB0015AA41 /* SuggesionAndComplainViewController.swift in Sources */,
 				A4729CF31D0B31550015AA41 /* FilterView.swift in Sources */,
+				A4B427191D13320F0015D268 /* BaseObject.swift in Sources */,
 				A4729CAF1D0B2F370015AA41 /* CustomNavigationViewController.swift in Sources */,
 				A4729C921D0B28A10015AA41 /* SubItemListViewController.swift in Sources */,
 				A4729D091D0B327F0015AA41 /* PlaceOrderHeaderView.swift in Sources */,

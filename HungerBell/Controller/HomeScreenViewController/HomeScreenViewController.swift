@@ -29,6 +29,9 @@ class HomeScreenViewController: UIViewController,UITableViewDataSource,UITableVi
         super.viewDidLoad()
         //call this method to initial setup
         self.initialSetup()
+        
+        let dict = ClassProperty.sharedInstance.getPropertyDictionaryForClass(self)
+        print(dict)
     }
     
     override func didReceiveMemoryWarning() {

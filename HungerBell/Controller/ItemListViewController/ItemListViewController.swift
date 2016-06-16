@@ -98,7 +98,8 @@ class ItemListViewController: UIViewController, UITableViewDataSource,UITableVie
         DataFetchManager.sharedInstance.fetchFoodCategoryOfOrderType(self.orderType) { (result, categories) in
             if result == true {
                 
-                self.categorylist = NSMutableArray(array: categories!)
+                
+                self.categorylist = NSMutableArray(array: categories!.cachedData as! NSArray)
                 self.addSectionSegments()
                 self.getFoodItemListForItem(self.segmentedControl.sectionTitles[0] as! String)
             }

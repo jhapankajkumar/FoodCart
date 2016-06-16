@@ -7,11 +7,27 @@
 //
 
 import UIKit
+import ObjectiveC
 
-class CacheData: NSObject {
+class CacheData: BaseObject {
     
     var cacheCreatedDateTime :NSDate!
     var cachedData:AnyObject!
     var infoDictionary:NSDictionary!
     
+   init(aCacheCreateDateTime:NSDate, aCacheData:AnyObject) {
+    
+        cacheCreatedDateTime = aCacheCreateDateTime;
+        cachedData = aCacheData;
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
 }
+
+
+

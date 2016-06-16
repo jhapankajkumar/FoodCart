@@ -15,5 +15,6 @@ target 'HungerBell' do
     pod 'WYPopoverController', '0.3.9'
     
     pod 'UIActivityIndicator-for-SDWebImage', '1.2'
+    pod 'Archiver'
 end
 

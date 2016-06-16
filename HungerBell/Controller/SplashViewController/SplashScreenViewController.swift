@@ -54,7 +54,7 @@ class SplashScreenViewController: UIViewController {
     func gotoHomeScreen() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        let settingsViewControlelr = storyBoard .instantiateViewControllerWithIdentifier("SettingsViewController")
+        _ = storyBoard .instantiateViewControllerWithIdentifier("SettingsViewController")
         let homeScreenViewController = storyBoard .instantiateViewControllerWithIdentifier("HomeScreenViewController")
         self.navigationController?.popToRootViewControllerAnimated(false);
         let sideMenuViewController = RESideMenu(contentViewController: homeScreenViewController, leftMenuViewController: nil, rightMenuViewController: nil);

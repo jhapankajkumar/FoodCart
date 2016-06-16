@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-HungerBell/Alamofire.framework"
+  install_framework "Pods-HungerBell/Archiver.framework"
   install_framework "Pods-HungerBell/FXKeychain.framework"
   install_framework "Pods-HungerBell/MBProgressHUD.framework"
   install_framework "Pods-HungerBell/ObjectMapper.framework"
@@ -95,6 +96,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-HungerBell/Alamofire.framework"
+  install_framework "Pods-HungerBell/Archiver.framework"
   install_framework "Pods-HungerBell/FXKeychain.framework"
   install_framework "Pods-HungerBell/MBProgressHUD.framework"
   install_framework "Pods-HungerBell/ObjectMapper.framework"

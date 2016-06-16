@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Archiver.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FXKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,17 +57,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2B12C1E2CAEA3968EE27276039518A47</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>41098C3BE3B87B1EDD1159B3B0F72A2E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6E0EC718F6638C7E291354C2F72FC807</key>
+		<key>03E1D96B76C5DA6E13DD8A3ACCB6C693</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +67,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>82BDF3C48DF6622859B80A51219B1F36</key>
+		<key>7BA578D48A5A931EE176643D8CA4B78D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C5C446CA054825D1684852F2CBC1157</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DCE4B186AFBB62E347362EDE51280A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9BA30435EFD7D35D4F46A5B8DF163F52</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,12 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D5D6200D4BE741574DBD4FB768A6F55B</key>
+		<key>B59E13BFD206395B625C53B9178EE75C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D6C01C6AD2933AFB1E808513E9E19DE7</key>
+		<key>D5D6200D4BE741574DBD4FB768A6F55B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

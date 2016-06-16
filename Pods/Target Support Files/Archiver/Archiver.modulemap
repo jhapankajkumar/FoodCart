@@ -1,0 +1,6 @@
+framework module Archiver {
+  umbrella header "Archiver-umbrella.h"
+
+  export *
+  module * { export * }
+}

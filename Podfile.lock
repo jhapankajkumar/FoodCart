@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (3.4.0)
+  - Archiver (1.0.4)
   - Crashlytics (3.7.1):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
@@ -40,6 +41,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 3.4.0)
+  - Archiver
   - Crashlytics
   - Fabric
   - FXKeychain (= 1.5.2)
@@ -52,6 +54,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Archiver: e55b50d226a634cd9f00e8b8fbfbc80cbd4aca67
   Crashlytics: 3cdd4c9655be68032a0cf0379e0fb5ef6af22cad
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   FXKeychain: 1a711bddc04a2bd69850dcfe297b8a43027a9980
